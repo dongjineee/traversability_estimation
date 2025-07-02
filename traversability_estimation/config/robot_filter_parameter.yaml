@@ -5,7 +5,7 @@ traversability_map_filters:
     params:
       input_layer: elevation
       output_layers_prefix: surface_normal_
-      radius: 0.05
+      radius: 0.5
       normal_vector_positive_axis: z
   - name: slopeFilter
     type: traversabilityFilters/SlopeFilter
@@ -31,6 +31,7 @@ traversability_map_filters:
     params:
       output_layer: traversability
       expression: (1.0 / 3.0) * (traversability_slope + traversability_step + traversability_roughness)
+
   - name: deletionFilter
     type: gridMapFilters/DeletionFilter
     params:
